@@ -10,16 +10,16 @@ const ReceiptsPage = () => {
   const receipts = context?.receipts ?? [];
 
   return (
-    <Box sx={{ padding: 3 }}>
-      <Typography variant="h4" gutterBottom>
+    <Box sx={{ padding: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%' }}>
+      <Typography variant="h4" sx={{ marginBottom: 3 }}>
         Receipts
       </Typography>
       {receipts.length === 0 ? (
         <Typography variant="body1">No receipts available.</Typography>
       ) : (
-        <Grid2 container spacing={2}>
+        <Grid2 container spacing={2} sx={{ width: '100%' }}>
           {receipts.map((receipt) => (
-            <Grid2 size={12}  key={receipt.id}>
+            <Grid2 size={{xs:12, md:6}} key={receipt.id}>
               <ReceiptCard
                 id={receipt.id}
                 date={receipt.date}

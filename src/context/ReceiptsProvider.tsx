@@ -1,7 +1,6 @@
 import { createContext, useState, useContext } from "react";
-import { ReceiptItem, ReceiptsContextType, ReceiptsProviderProps } from "../types"; 
-import { ProductsContext } from "../context/ProductsMenagement";  
-
+import { ReceiptItem, ReceiptsContextType, ReceiptsProviderProps } from "../types";
+import { ProductsContext } from "../context/ProductsMenagement";
 
 export const ReceiptsContext = createContext<ReceiptsContextType | undefined>(undefined);
 
@@ -14,15 +13,20 @@ const ReceiptsProvider = ({ children }: ReceiptsProviderProps) => {
   const productsContext = useContext(ProductsContext);
 
   const addReceipts = () => {
-    const cart = productsContext?.cart ?? []; 
+    const cart = productsContext?.cart ?? [];
     if (cart.length !== 0) {
-      const totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0); 
+      const totalPrice = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-      const receipt = {
-        id: new Date().toISOString(), 
-        items: cart,  
+      const receipt: ReceiptItem = {
+        id: crypto.randomUUID(), 
+        items: cart.map((item) => ({
+          id: item.id, 
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+        })),
         totalPrice,
-        date: new Date().toISOString(), 
+        date: new Date().toISOString(),
       };
 
       const updatedReceipts = [...receipts, receipt];

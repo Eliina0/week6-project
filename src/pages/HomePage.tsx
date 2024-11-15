@@ -12,17 +12,16 @@ const HomePage = () => {
   const products = context?.productsList;
 
   return (
-    <Box sx={{ padding: 3 , display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
-      <Typography variant="h4" sx={{ marginBottom: 5}}>
+    <Box sx={{ padding: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+      <Typography variant="h4" sx={{ marginBottom: 5 }}>
         Shopping Products
       </Typography>
 
       <Grid2 container spacing={3}>
         {products?.map((product) => (
-          <Grid2
-            size={{ xs: 12, sm: 6, md: 4 }}
+          <Grid2 size={{xs:12, sm:6, md:4, lg:3}}
+          sx={{marginBottom: '50px'}}
             key={product.id}
-            component="div"
           >
             <ProductCard
               id={product.id}

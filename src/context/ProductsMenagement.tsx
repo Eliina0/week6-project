@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import productsData from "../Products.json";
 import {
   Product,
@@ -10,21 +10,17 @@ import {
 export const ProductsContext = createContext<ProductsContextType | undefined>(undefined);
 
 export const ProductsManagement = ({ children }: ProductsManagementProps) => {
-  useEffect(() => {
-    if (!localStorage.getItem("products")) {
-      localStorage.setItem("products", JSON.stringify(productsData));
-    }
-  }, []);
-
-  const [cart, setCart] = useState<CartItem[]>(
-    JSON.parse(localStorage.getItem("cart") || "[]")
-  );
+  const [cart, setCart] = useState<CartItem[]>(JSON.parse(localStorage.getItem("cart") || "[]"));
   const [productsList, setProductsList] = useState<Product[]>(
-    JSON.parse(localStorage.getItem("products") || "[]")
+    JSON.parse(localStorage.getItem("products") || "[]").length > 0
+      ? JSON.parse(localStorage.getItem("products") || "[]")
+      : productsData
   );
+  
   const [productToEdit, setProductToEdit] = useState<Product | null>(null);
 
-  const addItemToCart = (id: number, quantity: number) => {
+  
+  const addItemToCart = (id: string, quantity: number) => {
     const product = productsList.find((item) => item.id === id);
 
     if (product) {
@@ -42,33 +38,40 @@ export const ProductsManagement = ({ children }: ProductsManagementProps) => {
       } else if (quantity > 0) {
         updatedCart = [
           ...cart,
-          { id, quantity, name: product.name, price: product.price, image: product.image },
+          {
+            id,
+            quantity,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+          },
         ];
       } else {
         return; 
       }
-
       setCart(updatedCart);
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
   };
 
-  const getItemQuantity = (id: number) => {
+
+  const getItemQuantity = (id: string) => {
     const item = cart.find((item) => item.id === id);
     return item ? item.quantity : 0;
   };
 
+
   const getTotalQuantity = () => {
-    return cart.reduce((total, item) => total + item.quantity, 0);
+    return cart?.reduce((total, item) => total + item.quantity, 0);
   };
 
-  const addProduct = (product: Product) => {
-    const productId = parseInt(product.id.toString(), 10); 
-    const productPrice = parseInt(product.price.toString(), 10); 
-    product.id = productId;
-    product.price = productPrice;
 
-    const productIndex = productsList.findIndex((p) => p.id === productId);
+  const addProduct = (product: Product) => {
+    if(!product.id) {
+      product.id = crypto.randomUUID(); 
+    }
+
+    const productIndex = productsList.findIndex((p) => p.id === product.id);
     let updatedProducts: Product[];
 
     if (productIndex !== -1) {
@@ -83,16 +86,19 @@ export const ProductsManagement = ({ children }: ProductsManagementProps) => {
     localStorage.setItem("products", JSON.stringify(updatedProducts));
   };
 
-  const deleteProduct = (id: number) => {
+
+  const deleteProduct = (id: string) => {
     const updatedProducts = productsList.filter((product) => product.id !== id);
     setProductsList(updatedProducts);
     localStorage.setItem("products", JSON.stringify(updatedProducts));
   };
 
+
   const cleanCart = () => {
     setCart([]);
     localStorage.removeItem("cart");
   };
+
 
   const values = {
     products: productsList,
