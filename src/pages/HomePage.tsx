@@ -6,8 +6,10 @@ import Grid2 from "@mui/material/Grid2";
 import ProductCard from "../components/ProductCard";
 
 const HomePage = () => {
+  console.log(crypto.randomUUID());
+  
   const context = useContext(ProductsContext);
-  const products = context?.products;
+  const products = context?.productsList;
 
   return (
     <Box sx={{ padding: 3 , display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>

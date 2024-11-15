@@ -19,7 +19,7 @@ const ReceiptsPage = () => {
       ) : (
         <Grid2 container spacing={2}>
           {receipts.map((receipt) => (
-            <Grid2 size={{xs:12, sm:6, md:4}}  key={receipt.id}>
+            <Grid2 size={12}  key={receipt.id}>
               <ReceiptCard
                 id={receipt.id}
                 date={receipt.date}

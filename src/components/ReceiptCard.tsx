@@ -19,7 +19,7 @@ const ReceiptCard = ({ date, totalPrice, items }: ReceiptItem) => {
         <Typography variant="subtitle1">Items:</Typography>
         {items.map((item) => (
           <Typography key={item.id} variant="body2">
-            {item.quantity} x {item.name} - ${item.price.toFixed(2)} each
+            {item.quantity} x {item.name} - ${item.price} each
           </Typography>
         ))}
       </CardContent>

@@ -28,7 +28,7 @@ const CartPage = () => {
         <>
         <Grid2 container spacing={3}>
           {context?.cart.map((item) => (
-            <Grid2 size={{ xs: 12, lg: 4 }} key={item.id}>
+            <Grid2 size={12} key={item.id}>
               <CartItem
                 id={item.id}
                 name={item.name}

@@ -3,84 +3,42 @@
     "id": 1,
     "name": "Men's Casual T-Shirt",
     "description": "A comfortable and stylish casual T-shirt, perfect for everyday wear.",
-    "price": 19.99,
-    "image": "https://image.hm.com/assets/hm/0a/65/0a659d3834f51e63328a409b10c5def3a2704cf5.jpg?imwidth=768",
-    "inStock": true,
-    "category": "Clothing",
-    "rating": 4.5,
-    "brand": "FashionFit",
-    "size": ["S", "M", "L", "XL"],
-    "color": ["Blue", "Grey", "Black"],
-    "material": "Cotton"
+    "price": 19,
+    "image": "https://image.hm.com/assets/hm/0a/65/0a659d3834f51e63328a409b10c5def3a2704cf5.jpg?imwidth=768"
   },
   {
     "id": 2,
     "name": "Women's Summer Dress",
     "description": "Light and breezy summer dress, ideal for casual outings and beach days.",
-    "price": 49.99,
-    "image": "https://image.hm.com/assets/hm/1d/f0/1df0b691023249496b2d8f8ae51225edf82bb73a.jpg?imwidth=2160",
-    "inStock": true,
-    "category": "Clothing",
-    "rating": 4.6,
-    "brand": "SunStyle",
-    "size": ["S", "M", "L"],
-    "color": ["Red", "White", "Yellow"],
-    "material": "Linen"
+    "price": 50,
+    "image": "https://image.hm.com/assets/hm/1d/f0/1df0b691023249496b2d8f8ae51225edf82bb73a.jpg?imwidth=2160"
   },
   {
     "id": 3,
     "name": "Women's Maxi Dress",
     "description": "Elegant and flowing maxi dress, perfect for formal occasions or a day out.",
-    "price": 79.99,
-    "image": "https://image.hm.com/assets/hm/19/29/19293d63dd0b01b283ab25f0ec6877578eb2f244.jpg?imwidth=2160",
-    "inStock": true,
-    "category": "Clothing",
-    "rating": 4.8,
-    "brand": "StyleGrace",
-    "size": ["S", "M", "L", "XL"],
-    "color": ["Black", "Navy", "Red"],
-    "material": "Silk"
+    "price": 79,
+    "image": "https://image.hm.com/assets/hm/19/29/19293d63dd0b01b283ab25f0ec6877578eb2f244.jpg?imwidth=2160"
   },
   {
     "id": 4,
     "name": "Women's Denim Jacket",
     "description": "Classic denim jacket, perfect for layering over any outfit for a chic, casual look.",
-    "price": 59.99,
-    "image": "https://image.hm.com/assets/hm/30/9c/309c03d0d13788d6107750387bc35f2642bf6bc9.jpg?imwidth=2160",
-    "inStock": true,
-    "category": "Clothing",
-    "rating": 4.5,
-    "brand": "DenimChic",
-    "size": ["S", "M", "L", "XL"],
-    "color": ["Blue", "Black"],
-    "material": "Denim"
+    "price": 59,
+    "image": "https://image.hm.com/assets/hm/30/9c/309c03d0d13788d6107750387bc35f2642bf6bc9.jpg?imwidth=2160"
   },
   {
     "id": 5,
     "name": "Women's Bomber Jacket",
     "description": "Trendy bomber jacket with a stylish design, perfect for cooler weather.",
-    "price": 69.99,
-    "image": "https://image.hm.com/assets/hm/12/c2/12c24f053c58c82e8023a036f92aa0d9ecb43ccc.jpg?imwidth=2160",
-    "inStock": true,
-    "category": "Clothing",
-    "rating": 4.6,
-    "brand": "UrbanStyle",
-    "size": ["S", "M", "L"],
-    "color": ["Olive", "Black"],
-    "material": "Polyester"
+    "price": 69,
+    "image": "https://image.hm.com/assets/hm/12/c2/12c24f053c58c82e8023a036f92aa0d9ecb43ccc.jpg?imwidth=2160"
   },
   {
     "id": 6,
     "name": "Women's Off-Shoulder Top",
     "description": "Chic off-shoulder top that can be dressed up or down for any occasion.",
-    "price": 29.99,
-    "image": "https://image.hm.com/assets/hm/b0/5b/b05bd458df5630d9ed2bad866ab2321f0c60a2b2.jpg?imwidth=2160",
-    "inStock": true,
-    "category": "Clothing",
-    "rating": 4.4,
-    "brand": "FashionVibe",
-    "size": ["S", "M", "L"],
-    "color": ["White", "Pink", "Black"],
-    "material": "Cotton"
+    "price": 29,
+    "image": "https://image.hm.com/assets/hm/b0/5b/b05bd458df5630d9ed2bad866ab2321f0c60a2b2.jpg?imwidth=2160"
   }
 ]

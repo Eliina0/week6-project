@@ -26,13 +26,15 @@ const ProductForm = ( {setShowProductForm}: ProductFormProps ) => {
   console.log(watch());
   
   const validateId = (id: number) => {
+    console.log(id);
+    
     if (!context?.productToEdit) {
-      const isIDUnique = !context?.productsList.some((product) => product.id === id);
-      console.log(isIDUnique); 
+      const isIDUnique = !context?.productsList.some((product) => product.id == id);
       return isIDUnique ? true : "The ID is already taken. Please choose a unique ID.";
     }
     return true;  
   };
+  
   
   
   return (
